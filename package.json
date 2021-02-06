@@ -1,0 +1,17 @@
+{
+  "name": "puppeteer-visual",
+  "version": "1.0.0",
+  "description": "Visual regression testing with puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "test-snapshots": "jest --config=jest.config.js --detectOpenHandles --forceExit",
+    "test-snapshots-update": "jest --config=jest.config.js --updateSnapshot --detectOpenHandles --forceExit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^26.6.3",
+    "jest-image-snapshot": "^4.3.0",
+    "puppeteer": "^7.0.1"
+  }
+}
