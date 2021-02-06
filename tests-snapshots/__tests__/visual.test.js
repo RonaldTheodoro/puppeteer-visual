@@ -57,4 +57,17 @@ describe('Visual regression testing', () => {
       failureThreshold: 0.01,
     })
   })
+
+  test('Remove element before snapshot', async () => {
+    await page.goto('http://www.example.com')
+    await page.evaluate(() => {
+      (document.querySelectorAll('h1') || []).forEach((el) => el.remove())
+    })
+
+    const image = await page.screenshot()
+    expect(image).toMatchImageSnapshot({
+      failureThresholdType: 'percent',
+      failureThreshold: 0.01,
+    })
+  })
 })
